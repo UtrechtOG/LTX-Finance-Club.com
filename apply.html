@@ -1,0 +1,134 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apply – ¥LTX Finance Club</title>  <!-- TailwindCSS -->  <script src="https://cdn.tailwindcss.com"></script>  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style></head>
+<body class="bg-black text-white">  <!-- Header -->  <header class="flex justify-between items-center px-8 py-6">
+    <a href="index.html" class="text-xl font-bold tracking-wide">¥LTX Finance Club</a>
+    <a href="access.html" class="text-sm hover:text-gray-400">Member Access</a>
+  </header>  <!-- Apply -->  <section class="max-w-3xl mx-auto px-6 py-16">
+    <h1 class="text-4xl font-bold mb-6">Membership Application</h1>
+    <p class="text-gray-400 mb-10">
+      ¥LTX Finance Club is a private, invite-only crypto institution.
+      All applications are reviewed manually. Membership is limited.
+    </p><form id="applyForm" class="space-y-10">
+
+  <!-- Personal Information -->
+  <div class="space-y-4">
+    <h2 class="text-xl font-semibold">Personal Information</h2>
+
+    <div class="grid md:grid-cols-2 gap-4">
+      <input required type="text" placeholder="First Name"
+        class="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-4 py-3" />
+      <input required type="text" placeholder="Last Name"
+        class="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-4 py-3" />
+    </div>
+
+    <!-- Age Select -->
+    <div>
+      <label class="text-sm text-gray-400">Age</label>
+      <select required
+        class="w-full mt-1 bg-neutral-900 border border-neutral-700 rounded-lg px-4 py-3">
+        <option value="">Select age</option>
+        <script>
+          for (let i = 18; i <= 80; i++) {
+            document.write(`<option value="${i}">${i}</option>`);
+          }
+        </script>
+      </select>
+    </div>
+
+    <input required type="text" placeholder="Citizenship / Nationality"
+      class="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-4 py-3" />
+
+    <input required type="text" placeholder="Residential Address"
+      class="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-4 py-3" />
+
+    <div class="grid md:grid-cols-2 gap-4">
+      <input required type="email" placeholder="Email Address"
+        class="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-4 py-3" />
+      <input required type="tel" placeholder="Phone Number"
+        class="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-4 py-3" />
+    </div>
+  </div>
+
+  <!-- Crypto Background -->
+  <div class="space-y-4">
+    <h2 class="text-xl font-semibold">Crypto Background</h2>
+
+    <select
+      class="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-4 py-3">
+      <option value="">Estimated total crypto profit (optional)</option>
+      <option>Below €1,000</option>
+      <option>€1,000 – €10,000</option>
+      <option>€10,000 – €50,000</option>
+      <option>€50,000 – €250,000</option>
+      <option>€250,000+</option>
+    </select>
+
+    <textarea rows="4" placeholder="Why do you want to join ¥LTX Finance Club?"
+      class="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-4 py-3"></textarea>
+  </div>
+
+  <!-- Optional KYC -->
+  <div class="border border-neutral-700 rounded-xl p-6 space-y-4">
+    <h2 class="text-xl font-semibold">Identity Verification (Optional)</h2>
+    <p class="text-gray-400 text-sm">
+      Identity verification is optional but strongly recommended.
+      Without verification, lost access codes cannot be recovered.
+    </p>
+
+    <div class="space-y-2">
+      <label class="text-sm">Government ID – Front</label>
+      <input type="file" accept="image/*" class="w-full text-sm" />
+    </div>
+
+    <div class="space-y-2">
+      <label class="text-sm">Government ID – Back</label>
+      <input type="file" accept="image/*" class="w-full text-sm" />
+    </div>
+
+    <div class="space-y-2">
+      <label class="text-sm">Face Photo</label>
+      <input type="file" accept="image/*" class="w-full text-sm" />
+    </div>
+  </div>
+
+  <!-- Warning -->
+  <div class="text-sm text-gray-400 border-l-2 border-yellow-500 pl-4">
+    By submitting this application, you acknowledge that without identity
+    verification, ¥LTX Finance Club cannot restore or recover access
+    credentials in case of loss.
+  </div>
+
+  <!-- Submit -->
+  <button type="submit"
+    class="w-full py-4 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition">
+    Submit Application
+  </button>
+</form>
+
+<!-- Success -->
+<div id="successMessage" class="hidden mt-16 text-center">
+  <h2 class="text-3xl font-bold mb-4">Application Submitted</h2>
+  <p class="text-gray-400">
+    Your application has been received and is now under review.
+    If approved, you will receive your personal ¥LTX access code.
+  </p>
+</div>
+
+  </section>  <!-- Footer -->  <footer class="py-10 text-center text-gray-600 text-sm">
+    © 2026 ¥LTX Finance Club. Private Crypto Institution.
+  </footer>  <!-- JS -->  <script>
+    const form = document.getElementById('applyForm');
+    const success = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      form.classList.add('hidden');
+      success.classList.remove('hidden');
+    });
+  </script></body>
+      </html>
